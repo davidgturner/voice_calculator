@@ -1,0 +1,23 @@
+grammar hello2;
+
+
+
+public <stop> = stop {stop} | compute {stop} | equals {stop};
+
+public <sign> = "+" {sign} | "-" {sign} | "*" {sign} | "/" {sign};
+
+<digit> = 0 {zero} | 1 {one} | 2 {two} | 3 {three} | 4 {four} | 5 {five} | 
+			6 {six} | 7 {seven} | 8 {eight} | 9 {nine} | 10 {ten};
+
+<tens> = 20 {twenty} | 30 {thirty} | 40 {forty} | 50 {fifty} | 60 {sixty} | 
+			70 {seventy}| 80 {eighty}| 90 {ninty};
+
+<twoDigit> = <tens> <digit> | <tens> | <digit>;
+
+<hundreds> = 100 {one hundred} | 200 {hundred} | 300 {hundred} | 400 {hundread} |
+			500 {hundred} | 600 {hundred} | 700 {hundred} | 800 {hundred} |
+			900 {hundred};
+
+<threeDigit> = <hundreds> <twoDigit> | <hundreds> | <twoDigit>;
+
+public <number> = <threeDigit>;
